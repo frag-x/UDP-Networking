@@ -26,13 +26,20 @@ TODO:
     - Since the player is reacting 100ms after the event actually took place, if
       we were to just send that to the server then it would appear that the
       player has very slow reactions, thus we need to time-stamp every player
-      state that goes over the network.
+      state that goes over the network. 
+    - For the next example let's pretend there are two players one of which is
+      you, and the enemy has just shot directly at your head, let's say that you
+      were able to predict that fact that they were going to fire and you could
+      move out of the way in time.
     - When the server gets the information that the player moved out of the way
       it will first take the time stamp and subtract it then recreated the game
-      at that time, to see that the player didn't actually die. 
-        - How would that work if during that time the server actually thought
-          the player died and sent the message to the player that they are dead,
-          then after 100ms, realized they weren't dead?
+      at that time, to see that the player didn't actually die.
+        - During that 100ms the game must have thought that the player died
+          though, since there wasn't any movement, but then after we got their
+          position we realized that they dodged the shot and are no longer dead,
+          how would the game deal with this?
+        - The enemy player would see the enemy get shot and then they wouldn't
+          die, this is one of the downsides to this approach.
 
 
 ---------------------------------------------
