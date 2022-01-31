@@ -1,3 +1,9 @@
+This repo is for experimentation with UPD networking for frag-x.
+It should be used to create MWE's to solve the different challenges which come
+with the UPD protocol.
+
+---------------------------------------------
+
 UPD, what we know so far:
 
 Packets are not partially sent:
